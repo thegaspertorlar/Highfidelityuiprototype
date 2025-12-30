@@ -1,5 +1,6 @@
 import { Button } from './ui/button';
 import { Users, TrendingUp, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import teamMeetingImg from 'figma:asset/53d6a2af8dbf29dd0cc1e95baf7b2722a0b93c7f.png';
 
 interface LandingProps {
   onNavigate: (page: 'login' | 'register') => void;
@@ -79,7 +80,7 @@ export function Landing({ onNavigate }: LandingProps) {
               <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-2xl"></div>
               <div className="relative overflow-hidden rounded-xl border border-slate-200/50 shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1764690690771-b4522d66b433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHRlYW0lMjBtZWV0aW5nJTIwY3Jvd2RlZCUyMG9mZmljZXxlbnwxfHx8fDE3NjcxMTczNTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src={teamMeetingImg}
                   alt="Team collaboration and meeting"
                   className="w-full h-auto"
                 />
