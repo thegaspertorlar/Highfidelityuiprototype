@@ -37,7 +37,7 @@ export function Sidebar({ currentView, onNavigate, user, onLogout }: SidebarProp
           <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
-          <span className="text-slate-900">EstiMate AI</span>
+          <span className="text-slate-900">DaxyCosty</span>
         </div>
       </div>
 

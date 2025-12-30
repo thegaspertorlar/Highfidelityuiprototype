@@ -8,6 +8,7 @@ import { Settings } from './components/settings';
 import { AllProjects } from './components/all-projects';
 import { Login } from './components/auth/login';
 import { Register } from './components/auth/register';
+import { Landing } from './components/landing';
 import { Button } from './components/ui/button';
 import { Toaster } from './components/ui/toaster';
 import { Menu, X } from 'lucide-react';
@@ -65,7 +66,7 @@ interface SavedProject {
 }
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('dashboard');
+  const [currentView, setCurrentView] = useState('landing');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [authView, setAuthView] = useState<'login' | 'register'>('login');
   const [user, setUser] = useState<User | null>(null);
@@ -248,10 +249,15 @@ export default function App() {
 
   // Show auth screens if user is not logged in
   if (!user) {
+    // Show landing page first
+    if (currentView === 'landing') {
+      return <Landing onNavigate={setCurrentView} />;
+    }
+    
     if (authView === 'login') {
-      return <Login onLogin={handleLogin} onNavigateToRegister={() => setAuthView('register')} />;
+      return <Login onLogin={handleLogin} onNavigateToRegister={() => { setAuthView('register'); setCurrentView('register'); }} />;
     } else {
-      return <Register onRegister={handleRegister} onNavigateToLogin={() => setAuthView('login')} />;
+      return <Register onRegister={handleRegister} onNavigateToLogin={() => { setAuthView('login'); setCurrentView('login'); }} />;
     }
   }
 
@@ -304,7 +310,7 @@ export default function App() {
               <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
             </svg>
           </motion.div>
-          <span className="text-slate-900">EstiMate AI</span>
+          <span className="text-slate-900">DaxyCosty</span>
         </div>
         <Button
           variant="ghost"

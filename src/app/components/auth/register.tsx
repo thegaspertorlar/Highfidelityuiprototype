@@ -78,7 +78,7 @@ export function Register({ onRegister, onNavigateToLogin }: RegisterProps) {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-2xl mb-4">
             <Sparkles className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-slate-900 mb-2">Join EstiMate AI</h1>
+          <h1 className="text-slate-900 mb-2">Join DaxyCosty</h1>
           <p className="text-slate-500">Start estimating projects with AI-powered insights</p>
         </div>
 
